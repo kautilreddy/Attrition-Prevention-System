@@ -1,0 +1,1 @@
+1. Domain is one person. Therefore, we don't need to pass person's name as a parameter.

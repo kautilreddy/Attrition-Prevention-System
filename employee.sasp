@@ -1,0 +1,14 @@
+%% General Job Market Information
+%%		low demand
+low_unemployement.
+%% low_unemployement_recent_grads.
+%% lotta_open_positions.
+
+%%		indication of employee knowing he is paid less
+employee_is_paid_less. %MUST HAVE. omit this rule if he is paid highest in the team
+%% reported_salary_sharing. 
+talkative_team.
+%% open_floor_plan.
+%% company_policy_allows_sharing.
+
+%%

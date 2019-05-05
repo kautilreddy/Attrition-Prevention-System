@@ -1,0 +1,18 @@
+#include 'employee.sasp'.
+%Aggresive reasoning for if demand is low
+low_demand:- not ab_demand, 
+			 not -low_demand.
+ab_demand:- low_unemployement. 
+ab_demand:- low_unemployement_recent_grads.
+ab_demand:- lotta_open_positions.
+
+%Aggresive reasoning
+employee_thinks_is_paid_less:-employee_is_paid_less, % This is a must have data rule
+							  not employee_doesnt_know_others_pay. 
+employee_doesnt_know_others_pay:- not reported_salary_sharing,
+								  not ab_sharing_salaries.
+ab_sharing_salaries:- talkative_team.
+ab_sharing_salaries:- open_floor_plan.
+ab_sharing_salaries:- company_policy_allows_sharing.
+
+?-employee_thinks_is_paid_less.
