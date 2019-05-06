@@ -1,0 +1,12 @@
+#include 'employee.sasp'.
+#include 'general_market_rules.sasp'.
+
+recent_layoff_side_effect:- recent_layoffs,not ab_worry.
+ab_worry:- low_demand.
+
+good_reputation:- upcoming_ipo.
+good_reputation:- increased_profits.
+good_reputation:- increasing_stock_prices.
+
+bad_reputation:- recent_layoffs.
+

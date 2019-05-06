@@ -1,0 +1,12 @@
+#include 'employee.sasp'.
+linked_in_danger:- changed_linked_in_for_interviews.
+linked_in_danger:- looking_for_interviews_with_linked_in.
+
+changed_linked_in_for_interviews:- recently_changed_linked_in,not ab_changes.
+ab_changes:- recent_raise.
+ab_changes:- not -heavy_linked_in_user.
+
+looking_for_interviews_with_linked_in:- marked_available_in_linked_in,not ab_marking.
+ab_marking:- -heavy_linked_in_user,recent_hire.
+-heavy_linked_in_user:- not heavy_linked_in_user.
+-heavy_linked_in_user:- not heavy_linked_in_user, not -current_company_not_listed.

@@ -1,0 +1,46 @@
+#include 'hr_fact_rules.sasp'.
+#include 'employee.sasp'.
+%
+bad_work_relations:-bad_manager_employee_relation.
+bad_work_relations:- bad_employee_team_relation.
+bad_manager_employee_relation:- manager_reported_rating(X), X<4.
+bad_employee_team_relation:- team_reported_rating(X),X<4.
+
+%Conservative reasoning of is sick. (We assume employee's appointments are not fake until we have concrete proof he is healthy)
+attending_interviews:- change_in_leave_pattern, not ab_pattern_change.
+ab_pattern_change:- family_emergency.
+
+attending_interviews:- fake_doctor_appointments.
+attending_interviews:- taking_too_many_calls,not ab_large_calls.
+fake_doctor_appointments:- doctor_appointments, not ab_doctor_appointments.
+ab_doctor_appointments:-not -is_sick.
+is_sick:- persived_health(sick).
+-is_sick:- persived_health(healthy).
+
+ab_large_calls:- major_life_change.
+ab_large_calls:- works_in(sales).
+ab_large_calls:- family_emergency.
+
+%
+less_motivation:- decreased_output,not ab_decrease.
+ab_decrease:- family_emergency.
+ab_decrease:- is_sick.
+ab_decrease:- major_life_change. % from hr_fact_rules file
+
+%
+frustrated_with_performance_review:- manager_thinks_deserves_raise,
+									 employee_thinks_deserves_raise,
+									 denied_raise.
+frustrated_with_performance_review:- promised_raise_in_past,denied_raise.
+
+%Concomitant choice for manager thinks deserves raise. (manager thinks deserves employee also thinks he deserves it unless told otherwise).
+manager_thinks_deserves_raise:- manager_said_deserve_raise,not ab_manager_thinks_deserves_raise,
+								not skip_concomitant_choice.
+skip_concomitant_choice:- not employee_thinks_deserves_raise,
+						  not ab_employee_thinks_deserves_raise.
+employee_thinks_deserves_raise:- manager_thinks_deserves_raise,
+						  	     not ab_employee_thinks_deserves_raise.
+ab_employee_thinks_deserves_raise:- recent_raise.
+
+
+

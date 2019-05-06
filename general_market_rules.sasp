@@ -14,5 +14,3 @@ employee_doesnt_know_others_pay:- not reported_salary_sharing,
 ab_sharing_salaries:- talkative_team.
 ab_sharing_salaries:- open_floor_plan.
 ab_sharing_salaries:- company_policy_allows_sharing.
-
-?-employee_thinks_is_paid_less.

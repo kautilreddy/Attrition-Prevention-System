@@ -1,0 +1,8 @@
+#include 'employee.sasp'.
+
+major_life_change:- bought_house.
+major_life_change:- had_children.
+major_life_change:- recently_married.
+-major_life_change:- not major_life_change.
+
+reached_average_tenure_time:- employee_average_tenure(X),employee_tenure_at_company(Y),Y>X.

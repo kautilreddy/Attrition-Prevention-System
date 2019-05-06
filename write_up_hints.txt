@@ -1,1 +1,2 @@
 1. Domain is one person. Therefore, we don't need to pass person's name as a parameter.
+2. if you're a heavy linked in user then your linked in usage is uniform which means that we can't detect your interview wanting ness through your linked in profiles
