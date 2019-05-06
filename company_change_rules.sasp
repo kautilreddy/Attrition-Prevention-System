@@ -1,4 +1,3 @@
-#include 'employee.sasp'.
 #include 'general_market_rules.sasp'.
 
 recent_layoff_side_effect:- recent_layoffs,not ab_worry.

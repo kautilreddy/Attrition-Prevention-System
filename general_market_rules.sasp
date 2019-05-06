@@ -1,4 +1,3 @@
-#include 'employee.sasp'.
 %Aggresive reasoning for if demand is low
 low_demand:- not ab_demand, 
 			 not -low_demand.

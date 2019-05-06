@@ -1,5 +1,4 @@
 #include 'hr_fact_rules.sasp'.
-#include 'employee.sasp'.
 %
 bad_work_relations:-bad_manager_employee_relation.
 bad_work_relations:- bad_employee_team_relation.

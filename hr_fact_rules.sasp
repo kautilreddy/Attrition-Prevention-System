@@ -1,5 +1,3 @@
-#include 'employee.sasp'.
-
 major_life_change:- bought_house.
 major_life_change:- had_children.
 major_life_change:- recently_married.

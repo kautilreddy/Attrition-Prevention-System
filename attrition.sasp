@@ -1,0 +1,4 @@
+#include 'employee.sasp'.
+#include 'general_market_rules.sasp'.
+
+?-low_demand.
