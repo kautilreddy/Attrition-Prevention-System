@@ -1,0 +1,59 @@
+%% General Job Market Information
+%%		low demand
+low_unemployement.
+low_unemployement_recent_grads.
+lotta_open_positions.
+
+%%		indication of employee knowing he is paid less
+employee_is_paid_less. %MUST HAVE NAF. omit this rule if he is paid highest in the team
+reported_salary_sharing. 
+talkative_team.
+open_floor_plan.
+company_policy_allows_sharing.
+
+%% Employee Behavior at the Job
+%%		employee relations
+manager_reported_rating(3). %MUST HAVE. between 1 to 10
+team_reported_rating(3). %MUST HAVE. between 1 to 10
+
+%%		attending interviews
+change_in_leave_pattern.  %MUST HAVE NAF. If missing no change in pattern.
+doctor_appointments.
+persived_health(healthy). %possible options healthy, sick.
+family_emergency.
+works_in(sales). %MUST HAVE. possible options dev,sales,misc.
+taking_too_many_calls.
+
+%% 		less motivation
+decreased_output.
+
+%% 		frustrated with recent performance review
+manager_said_deserve_raise. %MUST HAVE NAF.
+denied_raise.
+promised_raise_in_past.
+recent_raise.
+
+%%Trackable behaviour rules
+%%		changed linked in for interviews.
+recently_changed_linked_in.
+heavy_linked_in_user.
+
+%%		marked as available for interviews
+marked_available_in_linked_in.
+recent_hire.
+current_company_not_listed.
+
+%%Copany change rules
+upcoming_ipo.
+increased_profits.
+increasing_stock_prices.
+recent_layoffs.
+
+%%HR Facts
+%% 		major life change
+had_children.
+bought_house.
+recently_married.
+%%		average tenure
+employee_average_tenure(3).
+employee_tenure_at_company(2).
