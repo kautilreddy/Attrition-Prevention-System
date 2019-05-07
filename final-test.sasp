@@ -1,0 +1,30 @@
+option(a). %idk
+option(d). % surely leave
+option(e). % surely wont leave
+strong_leave.
+leave.
+stay.
+strong_stay.
+
+pre_a.
+pre_b:- leave, not stay,not strong_stay.
+pre_c:- stay, not leave,not strong_leave.
+pre_d:- strong_leave,not strong_stay.
+pre_e:- strong_stay,not strong_leave.
+
+equal(X,X).
+-equal(X,Y):- not equal(X,Y).
+
+d(a):- pre_a, not ab_a,not -d(a).
+ab_a:- d(b).
+ab_a:- d(c).
+ab_a:- d(d).
+ab_a:- d(e).
+d(b):- pre_b,not ab_b,not -d(b).
+ab_b:- d(d).
+d(c):- pre_c,not ab_c,not -d(c).
+ab_c:- d(e).
+d(d):- pre_d,not -d(d).
+d(e):- pre_e,not -d(e).
+-d(X) :- decision(X),decision(Y),d(Y),-equal(X,Y).
+
