@@ -1,4 +1,39 @@
 #include 'employee.sasp'.
 #include 'general_market_rules.sasp'.
+#include 'employee_behaviour_rules.sasp'.
+#include 'trackable_behaviour_rules.sasp'.
+#include 'company_change_rules.sasp'.
+#include 'hr_fact_rules.sasp'.
 
-?-low_demand.
+leave:- employee_thinks_is_paid_less,linked_in_danger.
+leave:- linked_in_danger.
+leave:- linked_in_danger,not low_demand.
+leave:- attending_interviews.
+leave:- less_motivation,linked_in_danger.
+leave:- frustrated_with_performance_review,linked_in_danger.
+leave:- reached_average_tenure_time,less_motivation.
+leave:- recent_layoff_side_effect.
+-leave:- good_reputation,not frustrated_with_performance_review.
+-leave:-major_life_change.
+-leave:-low_demand,not bad_work_relations.
+
+
+test_employee:-surely_leave.
+test_employee:-surely_not_leave.
+test_employee:-may_be_leave.
+test_employee:-may_not_leave.
+test_employee:-i_dont_know.
+
+surely_leave:-leave.
+surely_not_leave:- -leave.
+may_be_leave:-not -leave.
+may_not_leave:-not leave.
+i_dont_know:- not leave,not -leave.
+
+decide(surely_leave):-surely_leave.
+decide(surely_not_leave):-surely_not_leave.
+decide(may_be_leave):-may_be_leave.
+decide(may_not_leave):-may_not_leave.
+decide(i_dont_know):-i_dont_know.
+
+?- -leave.
