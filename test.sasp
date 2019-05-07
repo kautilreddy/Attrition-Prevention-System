@@ -1,4 +1,4 @@
-#include 'employee.sasp'.
+#include 'employee_all_data.sasp'.
 #include 'general_market_rules.sasp'.
 #include 'employee_behaviour_rules.sasp'.
 #include 'trackable_behaviour_rules.sasp'.
@@ -6,7 +6,7 @@
 #include 'hr_fact_rules.sasp'.
 
 strong_leave:- weak_leave, attending_interviews.
-%% strong_leave:- weak_leave, linked_in_danger.
+strong_leave:- weak_leave, linked_in_danger.
 weak_leave:- employee_thinks_is_paid_less.
 weak_leave:- not low_demand.
 weak_leave:- less_motivation.
@@ -15,8 +15,8 @@ weak_leave:- reached_average_tenure_time.
 weak_leave:- recent_layoff_side_effect.
 
 strong_stay:- weak_stay,low_demand.
-%% strong_stay:- weak_stay,not attending_interviews,not linked_in_danger.
-%% strong_stay:- weak_stay,good_work_relations.
+strong_stay:- weak_stay,not attending_interviews,not linked_in_danger.
+strong_stay:- weak_stay,good_work_relations.
 weak_stay:- good_reputation.
 weak_stay:- major_life_change.
 weak_stay:- not bad_work_relations.
@@ -34,8 +34,8 @@ pre_may_be_leave:- weak_leave, not weak_stay,not strong_stay.
 pre_may_not_leave:- weak_stay, not weak_leave,not strong_leave.
 pre_surely_leave:- strong_leave,not strong_stay.
 pre_surely_not_leave:- strong_stay,not strong_leave.
-%% equal(X,X).
-%% -equal(X,Y):- not equal(X,Y).
+equal(X,X).
+-equal(X,Y):- not equal(X,Y).
 
 d(i_dont_know):- pre_i_dont_know, not ab_i_dont_know,not -d(i_dont_know).
 ab_i_dont_know:- d(may_be_leave).
@@ -48,7 +48,7 @@ d(may_not_leave):- pre_may_not_leave,not ab_may_not_leave,not -d(may_not_leave).
 ab_may_not_leave:- d(surely_not_leave).
 d(surely_leave):- pre_surely_leave,not -d(surely_leave).
 d(surely_not_leave):- pre_surely_not_leave,not -d(surely_not_leave).
-%% -d(X) :- decision(X),decision(Y),d(Y),-equal(X,Y).
+-d(X) :- decision(X),decision(Y),d(Y),-equal(X,Y).
 
 
 ?- d(X).

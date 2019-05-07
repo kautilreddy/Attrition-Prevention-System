@@ -5,6 +5,11 @@ bad_work_relations:- bad_employee_team_relation.
 bad_manager_employee_relation:- manager_reported_rating(X), X<4.
 bad_employee_team_relation:- team_reported_rating(X),X<4.
 
+good_work_relations:-good_manager_employee_relation.
+good_work_relations:- good_employee_team_relation.
+good_manager_employee_relation:- manager_reported_rating(X), X>8.
+good_employee_team_relation:- team_reported_rating(X),X>8.
+
 %Conservative reasoning of is sick. (We assume employee's appointments are not fake until we have concrete proof he is healthy)
 attending_interviews:- change_in_leave_pattern, not ab_pattern_change.
 ab_pattern_change:- family_emergency.
