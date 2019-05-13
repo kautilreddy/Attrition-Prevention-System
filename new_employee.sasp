@@ -1,0 +1,30 @@
+%% General Job Market Information
+%%		low demand
+lotta_open_positions.
+
+%% Employee Behavior at the Job
+%%		employee relations
+manager_reported_rating(5). %MUST HAVE. between 1 to 10
+team_reported_rating(5). %MUST HAVE. between 1 to 10
+
+%%		attending interviews
+persived_health(healthy). %possible options healthy, sick.
+
+%%Trackable behaviour rules
+%%		changed linked in for interviews.
+recently_changed_linked_in.
+
+%%		marked as available for interviews
+marked_available_in_linked_in.
+recent_hire.
+
+%%Copany change rules
+increasing_stock_prices.
+
+%%HR Facts
+%% 		major life change
+recently_married.
+
+%%		average tenure
+employee_average_tenure(4).
+employee_tenure_at_company(1).

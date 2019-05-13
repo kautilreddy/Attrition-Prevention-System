@@ -1,0 +1,21 @@
+%% General Job Market Information
+%%		low demand
+lotta_open_positions.
+
+%% Employee Behavior at the Job
+%%		employee relations
+manager_reported_rating(4). %MUST HAVE. between 1 to 10
+team_reported_rating(5). %MUST HAVE. between 1 to 10
+
+%%		attending interviews
+change_in_leave_pattern.  %MUST HAVE NAF. If missing no change in pattern.
+persived_health(sick). %possible options healthy, sick.
+family_emergency.
+taking_too_many_calls.
+
+%% 		less motivation
+decreased_output.
+
+%%		average tenure
+employee_average_tenure(3).
+employee_tenure_at_company(2).

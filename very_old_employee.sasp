@@ -1,0 +1,18 @@
+%%		indication of employee knowing he is paid less
+employee_is_paid_less. %MUST HAVE NAF. omit this rule if he is paid highest in the team
+
+%% Employee Behavior at the Job
+%%		employee relations
+manager_reported_rating(8). %MUST HAVE. between 1 to 10
+team_reported_rating(7). %MUST HAVE. between 1 to 10
+
+%%		attending interviews
+persived_health(healthy). %possible options healthy, sick.
+
+%% 		frustrated with recent performance review
+manager_said_deserve_raise. %MUST HAVE NAF.
+recent_raise.
+
+%%		average tenure
+employee_average_tenure(3).
+employee_tenure_at_company(7).

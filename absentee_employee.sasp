@@ -1,0 +1,29 @@
+%% General Job Market Information
+%%		low demand
+low_unemployement.
+%% low_unemployement_recent_grads.
+%% lotta_open_positions.
+
+%% Employee Behavior at the Job
+%%		employee relations
+manager_reported_rating(4). %MUST HAVE. between 1 to 10
+team_reported_rating(4). %MUST HAVE. between 1 to 10
+
+%%		attending interviews
+change_in_leave_pattern.  %MUST HAVE NAF. If missing no change in pattern.
+doctor_appointments.
+persived_health(healthy). %possible options healthy, sick.
+
+%%Trackable behaviour rules
+%%		changed linked in for interviews.
+recently_changed_linked_in.
+
+%%		marked as available for interviews
+marked_available_in_linked_in.
+
+%%Copany change rules
+recent_layoffs.
+
+%%		average tenure
+employee_average_tenure(2).
+employee_tenure_at_company(3).

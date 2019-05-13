@@ -1,4 +1,9 @@
-#include 'employee.sasp'.
+%% #include 'absentee_employee.sasp'
+%% #include 'new_employee.sasp'.
+#include 'frustrated_employee.sasp'.
+%% #include 'with_family_problems.sasp'.
+%% #include 'very_old_employee.sasp'.
+
 #include 'general_market_rules.sasp'.
 #include 'employee_behaviour_rules.sasp'.
 #include 'trackable_behaviour_rules.sasp'.

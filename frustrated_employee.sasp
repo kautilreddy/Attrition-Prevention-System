@@ -1,0 +1,27 @@
+%% General Job Market Information
+%%		low demand
+low_unemployement.
+
+%%		indication of employee knowing he is paid less
+employee_is_paid_less. %MUST HAVE NAF. omit this rule if he is paid highest in the team
+reported_salary_sharing. 
+
+%% Employee Behavior at the Job
+%%		employee relations
+manager_reported_rating(2). %MUST HAVE. between 1 to 10
+team_reported_rating(4). %MUST HAVE. between 1 to 10
+
+%%		attending interviews
+persived_health(healthy). %possible options healthy, sick.
+
+
+%% 		less motivation
+decreased_output.
+
+%% 		frustrated with recent performance review
+denied_raise.
+promised_raise_in_past.
+
+%%		average tenure
+employee_average_tenure(3).
+employee_tenure_at_company(4).
